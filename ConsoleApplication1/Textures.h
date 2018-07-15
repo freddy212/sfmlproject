@@ -1,4 +1,6 @@
 #pragma once
+#include <map>
+#include <string>
 namespace Textures {
-	enum ID {Player};
+	enum ID { Player, Fireball };
 }
