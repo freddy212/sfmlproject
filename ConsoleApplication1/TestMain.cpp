@@ -15,15 +15,19 @@ void testeq(std::string testname,T a, T b) {
 int mai() {
 	testFireball();
 	testMovement();
+	Game game;
 }
 
 void testMovement() {
-	MoveableEntity mv;
-	testeq("movement speed should be 3 ",3, mv.getMovementSpeed());
+	//MoveableEntity mv;
+	//testeq("movement speed should be 3 ",3, mv.getMovementSpeed());
 }
 void testFireball() {
 	Fireball fb(rh);
 	testeq ("fireball should do 10 damage", 10, fb.getDamage());
 	testeq ("fireball should have 1 cooldown", 1, fb.getCooldown());
 	testeq ("fireball should have 1 cooldown", 2, fb.getCooldown());
+}
+void testIntersection() {
+
 }

@@ -7,3 +7,7 @@ int Ability::getCooldown() {
 int Ability::getDamage() {
 	return damage;
 }
+
+int Ability::getOwnerId() {
+	return ownerID;
+}

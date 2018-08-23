@@ -17,6 +17,10 @@ void MoveableEntity::setPosition(sf::Vector2f point) {
 	sprite.setPosition(point);
 }
 
+sf::Shape* MoveableEntity::getBoundingShape() {
+	return boundingshape;
+}
+
 void MoveableEntity::startMoving(sf::Vector2f point) {
 	movementvector = CustomMath::normalizeUnitVector(sprite.getPosition(), point);
 }
@@ -32,6 +36,10 @@ void MoveableEntity::loadTexture(Textures::ID id, ResourceHolder <sf::Texture, T
 {
 	//rh.load(id, imageDestination);
 	sprite.setTexture(rh.get(id));
+}
+
+float MoveableEntity::getAngle() {
+	return angle; 
 }
 
 sf::Vector2f MoveableEntity::getMovementVector() {

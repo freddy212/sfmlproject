@@ -7,8 +7,12 @@
 
 class Fireball : public Ability{
 private:
+
 	std::string fireballImageDestination = "C:/Users/frede/Desktop/Images/fireball.png";
+	sf::RectangleShape fbrs;
 
 public:
-	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh);
+
+	void setBoundingShape();
+	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh, int ownerID);
 };
