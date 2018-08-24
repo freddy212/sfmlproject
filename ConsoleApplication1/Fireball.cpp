@@ -5,9 +5,9 @@ void manipulateSpriteImage(sf::Sprite &fbSprite) {
 	fbSprite.scale(0.1, 0.1);
 }
 
-Fireball::Fireball(ResourceHolder<sf::Texture, Textures::ID>& rh, int ownerID)
+Fireball::Fireball(ResourceHolder<sf::Texture, Textures::ID>& rh, Player *ownedBy)
 {
-	//owner = &castedBy;
+	owner = ownedBy;
 	fbrs.setOrigin(10, 20);
 	fbrs.setSize(sf::Vector2f(20, 50));
 	boundingshape = &fbrs;

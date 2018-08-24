@@ -1,4 +1,4 @@
-#include "Player.h";
+#include "Player.h"
 #include "CustomMath.h"
 #include <iostream>
 
@@ -10,6 +10,7 @@ void Player::manipulateSpriteImage(sf::Sprite &playerSprite) {
 
 Player::Player(ResourceHolder<sf::Texture, Textures::ID>&rh)
 {
+    hitstate = NOTHIT;
 	sf::Vector2f circlepos = sf::Vector2f(getSprite().getPosition().x - (getSprite().getTextureRect().width / 5 / 3.5), getSprite().getPosition().y - (getSprite().getTextureRect().height / 5 / 2.9));
 	float circleradius = 20;
 	circleshape.setPosition(circlepos);
@@ -25,8 +26,32 @@ void Player::stopAtDestination() {
 	}
 }
 
-void Player::isHit(sf::Vector2f direction) {
+void Player::isHit(sf::Vector2f &direction) {
+	hitstate = HITSTUN;
+	movementspeed = 40;
 	movementvector = direction;
+}
+
+void Player::handleHitStun(int currentSpeed) {
+	if (hitstate == HITSTUN) {
+		if (numberOfTimesToRepeatSpeedInHitstun > 1) {
+			numberOfTimesToRepeatSpeedInHitstun--;
+		}
+		else {
+			movementspeed = movementspeed / 2;
+			numberOfTimesToRepeatSpeedInHitstun = 5;
+		}
+		if (movementspeed <= 2) {
+			numberOfTimesToRepeatSpeedInHitstun = 5;
+			hitstate = NOTHIT;
+			movementspeed = playerDefaultMovementSpeed;
+			movementvector = sf::Vector2f(0,0);
+		}
+	}
+}
+
+Player::HitState Player::getHitState() {
+	return hitstate;
 }
 void Player::setBoundingShape() {
 	auto mrs = getBoundingShape();

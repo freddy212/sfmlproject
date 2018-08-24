@@ -14,5 +14,5 @@ private:
 public:
 
 	void setBoundingShape();
-	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh, int ownerID);
+	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh, Player *ownedBy);
 };

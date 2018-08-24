@@ -6,10 +6,10 @@ class Ability : public MoveableEntity{
 public:
 	int getDamage();
 	int getCooldown();
-	int getOwnerId();
+	Player *getOwner();
 	
 protected:
 	int damage;
 	double cooldown;
-	int ownerID;
+	Player *owner;
 };

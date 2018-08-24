@@ -7,7 +7,6 @@
 #define M_PI 3.1415926535897
 class CustomMath{
 public:
-
 	float static distance(const sf::Vector2f &left, const sf::Vector2f &right) {
 		float csq = pow((left.x - right.x), 2) + pow((left.y - right.y), 2);
 		return sqrt(csq);
@@ -47,7 +46,8 @@ public:
 	}
 
 	bool static circleIntersectionWithRotatedRectangle(sf::Vector2f circlepos, float circleradius, sf::FloatRect rect, float rotation) {
-		 float rectCenterX = rect.left;
+		int circlexoffset = 10;
+		float rectCenterX = rect.left;
 		 float rectCenterY = rect.top;
 
 		float rectX = rectCenterX - rect.width / 2;
@@ -87,7 +87,7 @@ public:
 
 		// Determine collision
 		bool collision = false;
-		float distanceBetweenObjects = distance(sf::Vector2f(unrotatedCircleX, unrotatedCircleY), 
+		float distanceBetweenObjects = distance(sf::Vector2f(unrotatedCircleX + circlexoffset, unrotatedCircleY), 
 			sf::Vector2f(closestX, closestY));
 
 		if (distanceBetweenObjects < circleradius) {

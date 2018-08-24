@@ -8,6 +8,6 @@ int Ability::getDamage() {
 	return damage;
 }
 
-int Ability::getOwnerId() {
-	return ownerID;
+Player* Ability::getOwner() {
+	return owner;
 }
