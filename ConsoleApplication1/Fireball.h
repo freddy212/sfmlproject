@@ -1,11 +1,10 @@
 
-
-#include "Ability.h"
+#include "Projectile.h"
 #include "ResourceHolder.h"
 #include "Textures.h"
 #include "SFML/Graphics.hpp"
 
-class Fireball : public Ability{
+class Fireball : public Projectile{
 private:
 
 	std::string fireballImageDestination = "C:/Users/frede/Desktop/Images/fireball.png";
@@ -14,5 +13,5 @@ private:
 public:
 
 	void setBoundingShape();
-	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh, Player *ownedBy);
+	Fireball(ResourceHolder <sf::Texture, Textures::ID> &rh, int id);
 };

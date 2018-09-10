@@ -45,6 +45,10 @@ public:
 		return (cornerDistance_sq <= pow(circleradius,2));
 	}
 
+	bool static circleContainsPoint(sf::CircleShape &circle, sf::Vector2f point) {
+		return distance(point, circle.getPosition()) < circle.getRadius();
+	}
+
 	bool static circleIntersectionWithRotatedRectangle(sf::Vector2f circlepos, float circleradius, sf::FloatRect rect, float rotation) {
 		int circlexoffset = 10;
 		float rectCenterX = rect.left;

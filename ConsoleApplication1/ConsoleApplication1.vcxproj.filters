@@ -19,6 +19,9 @@
     <Filter Include="TestFiles">
       <UniqueIdentifier>{2d6dc83e-7671-4fc1-bc0d-09d2106a0711}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fonts">
+      <UniqueIdentifier>{87bc8d06-d752-43aa-b174-5695ad0a177d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -36,13 +39,19 @@
     <ClCompile Include="Fireball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ability.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TestMain.cpp">
       <Filter>TestFiles</Filter>
     </ClCompile>
     <ClCompile Include="MoveableEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Projectile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sartan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -67,13 +76,22 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ability.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Fireball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MoveableEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFfont.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Projectile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sartan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -81,5 +99,10 @@
     <None Include="ResourceHolder.inl">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="..\..\..\..\Downloads\orange_juice\orange juice 2.0.ttf">
+      <Filter>Fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>

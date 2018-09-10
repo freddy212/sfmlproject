@@ -1,15 +1,14 @@
 #pragma once
 
 #include "MoveableEntity.h"
-#include "Player.h"
-class Ability : public MoveableEntity{
+class Projectile : public MoveableEntity{
 public:
 	int getDamage();
 	int getCooldown();
-	Player *getOwner();
+	int getOwnerID();
 	
 protected:
 	int damage;
 	double cooldown;
-	Player *owner;
+	int ownerID;
 };

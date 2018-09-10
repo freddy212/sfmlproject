@@ -7,6 +7,8 @@
 #include "Player.h"
 #include "ResourceHolder.h"
 #include "Textures.h"
+#include "SFfont.h"
+#include "Sartan.h"
 
 #include <iostream>
 class Game {
@@ -14,9 +16,11 @@ class Game {
 private: 
 	sf::CircleShape innercirclecreation();
 	void loadTextures();
+	void loadFonts();
 	ResourceHolder <sf::Texture, Textures::ID> rh;
-	int windowWidth = 800;
-	int windowHeight = 640;
+	ResourceHolder <sf::Font, Fonts::ID> fh;
+	float windowWidth = 800;
+	float windowHeight = 640;
 	sf::FloatRect windowRect;
 	sf::Vector2f viewPos;
 

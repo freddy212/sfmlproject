@@ -2,5 +2,5 @@
 #include <map>
 #include <string>
 namespace Textures {
-	enum ID { Player, Fireball };
+	enum ID { Player, Fireball ,Sartan};
 }
