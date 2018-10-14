@@ -12,8 +12,9 @@ Player::Player(ResourceHolder<sf::Texture, Textures::ID>&rh, int id)
 {
 	ID = id;
 	health = 100;
+	defaultMovementSpeed = movementspeed;
 	sf::Vector2f circlepos = sf::Vector2f(getSprite().getPosition().x - (getSprite().getTextureRect().width / 5 / 3.5), getSprite().getPosition().y - (getSprite().getTextureRect().height / 5 / 2.9));
-	float circleradius = 20;
+	circleradius = 20;
 	loadTexture(Textures::Player, rh);
 	manipulateSpriteImage(sprite);
 	circleshape.setPosition(circlepos);
@@ -24,10 +25,6 @@ Player::Player(ResourceHolder<sf::Texture, Textures::ID>&rh, int id)
 }
 void Player::setBoundingShape() {
 	auto mrs = getBoundingShape();
-	auto newcirclepos =  sprite.getPosition();
+	auto newcirclepos = sprite.getPosition();
 	mrs->setPosition(newcirclepos);
-}
-
-float Player::getPlayerCircleRadius() {
-	return playerCircleRadius;
 }

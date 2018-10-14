@@ -15,7 +15,7 @@ Fireball::Fireball(ResourceHolder<sf::Texture, Textures::ID>& rh, int id)
 	manipulateSpriteImage(sprite);
 	damage = 10;
 	cooldown = 1;
-	movementspeed = 5;
+	movementspeed = 7;
 }
 void Fireball::setBoundingShape(){
 	auto gb = getSprite().getGlobalBounds();

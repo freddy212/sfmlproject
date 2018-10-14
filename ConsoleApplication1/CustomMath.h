@@ -49,6 +49,13 @@ public:
 		return distance(point, circle.getPosition()) < circle.getRadius();
 	}
 
+
+	sf::Vector2f static pointAfterMove(sf::Vector2f prevPoint, float distance, float angle) {
+		float new_x = prevPoint.x + distance * cos(angle * M_PI / 180);
+		float new_y = prevPoint.y + distance * sin(angle * M_PI / 180);
+		return sf::Vector2f(new_x, new_y);
+	}
+
 	bool static circleIntersectionWithRotatedRectangle(sf::Vector2f circlepos, float circleradius, sf::FloatRect rect, float rotation) {
 		int circlexoffset = 10;
 		float rectCenterX = rect.left;

@@ -14,8 +14,11 @@ int Character::getID()
 	return ID;
 }
 
-
-void Character::shootProjectile(Projectile * p, sf::Vector2f &pointClicked)
+void Character::startMovingToPoint(sf::Vector2f pointClicked) {
+	changeDirectionToPoint(pointClicked);
+	startMoving(pointClicked);
+}
+void Character::shootProjectile(Projectile * p, sf::Vector2f pointClicked)
 {
 	p->setPosition(getSprite().getPosition());
 	p->changeDirectionToPoint(pointClicked);
@@ -54,7 +57,12 @@ void Character::handleHitStun() {
 			numberOfTimesToRepeatSpeedInHitstun = 5;
 			hitstate = NOTHIT;
 			movementspeed = defaultMovementSpeed;
-			movementvector = sf::Vector2f(0, 0);
+			movementvector = defaultMovementVector;
 		}
 	}
+}
+
+float Character::getCircleRadius()
+{
+	return circleradius;
 }
