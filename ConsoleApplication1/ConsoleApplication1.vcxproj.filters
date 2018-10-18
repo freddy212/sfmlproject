@@ -28,6 +28,12 @@
     <Filter Include="Header Files\Characters">
       <UniqueIdentifier>{90f46428-e6ee-40d0-bb67-12a13ef8a063}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Projectiles">
+      <UniqueIdentifier>{06e4d9a8-b2e1-4543-ad02-0cdeda590c00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Projectiles">
+      <UniqueIdentifier>{fcde2535-ad52-48fd-8091-a593837c9c61}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -37,9 +43,6 @@
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Fireball.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="TestMain.cpp">
@@ -60,6 +63,12 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Characters</Filter>
     </ClCompile>
+    <ClCompile Include="Fireball.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Icicle.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\Images\man.png">
@@ -79,9 +88,6 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fireball.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MoveableEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -99,6 +105,12 @@
     </ClInclude>
     <ClInclude Include="Sartan.h">
       <Filter>Header Files\Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Fireball.h">
+      <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Icicle.h">
+      <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

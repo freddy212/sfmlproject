@@ -4,11 +4,11 @@
 class Projectile : public MoveableEntity{
 public:
 	int getDamage();
-	int getCooldown();
+	float getCooldown();
 	int getOwnerID();
 	
 protected:
 	int damage;
-	double cooldown;
+	float cooldown;
 	int ownerID;
 };

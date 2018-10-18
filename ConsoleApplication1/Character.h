@@ -8,7 +8,7 @@ public:
 		NOTHIT
 	};
 	HitState getHitState();
-	void isHit(sf::Vector2f &direction);
+	virtual void isHit(sf::Vector2f &direction);
 	int getHealth();
 	int getID();
 	void shootProjectile(Projectile *p, sf::Vector2f pointClicked);

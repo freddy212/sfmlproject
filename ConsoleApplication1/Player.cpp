@@ -12,6 +12,7 @@ Player::Player(ResourceHolder<sf::Texture, Textures::ID>&rh, int id)
 {
 	ID = id;
 	health = 100;
+	movementspeed = 4;
 	defaultMovementSpeed = movementspeed;
 	sf::Vector2f circlepos = sf::Vector2f(getSprite().getPosition().x - (getSprite().getTextureRect().width / 5 / 3.5), getSprite().getPosition().y - (getSprite().getTextureRect().height / 5 / 2.9));
 	circleradius = 20;
@@ -22,6 +23,24 @@ Player::Player(ResourceHolder<sf::Texture, Textures::ID>&rh, int id)
 	circleshape.setOrigin(circleradius, circleradius);
 	boundingshape = &circleshape;
 
+}
+void Player::isHit(sf::Vector2f & direction)
+{
+	Character::isHit(direction);
+}
+int Player::getAvailableIcicle()
+{
+	return availableIcicle;
+}
+void Player::incrementAvailableIcicle()
+{
+	if (availableIcicle < 10) {
+		availableIcicle++;
+	}
+}
+void Player::decrementAvailableIcicle()
+{
+	availableIcicle--;
 }
 void Player::setBoundingShape() {
 	auto mrs = getBoundingShape();

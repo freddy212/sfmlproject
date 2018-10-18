@@ -1,6 +1,6 @@
 #include "Projectile.h"
 
-int Projectile::getCooldown() {
+float Projectile::getCooldown() {
 	return cooldown;
 }
 

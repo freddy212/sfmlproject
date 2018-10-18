@@ -12,7 +12,7 @@ Sartan::Sartan(ResourceHolder <sf::Texture, Textures::ID> &rh, int id) {
 	ID = id;
 	refrh = &rh;
 	health = 300;
-	movementspeed = 5;
+	movementspeed = 6;
 	defaultMovementSpeed = movementspeed;
 	sf::Vector2f circlepos = sf::Vector2f(getSprite().getPosition());
 	circleradius = 18;
@@ -25,19 +25,34 @@ Sartan::Sartan(ResourceHolder <sf::Texture, Textures::ID> &rh, int id) {
 	sprite.setPosition(400, 180);
 }
 void Sartan::dodgeProjectile() {
-	if (!dodged) {
-		dodged = true;
-		int randomNumX = rand() % 125 - 250;
-		int randomNumY = rand() % 125 - 250;
+	if (dodged) {
+		dodged = false;
+		int randomNumX = rand() % 500 - 250;
+		int randomNumY = rand() % 500 - 250;
+		std::cout << "rand x is: " << randomNumX << "rand y is: " << randomNumY << "\n";
 		startMovingToPoint(sf::Vector2f(400 + randomNumX, 320 + randomNumY));
 	}
 }
 
 void Sartan::fireBarrage(std::vector<Projectile*> &activeAbilities){
-	Fireball* fb1 = new Fireball(*refrh, getID());
-	shootProjectile(fb1, sf::Vector2f(0, 0));
-	activeAbilities.push_back(fb1);
-	Fireball* fb2 = new Fireball(*refrh, getID());
+	int randomNumX = rand() % 300 - 150;
+	int randomNumY = rand() % 300 - 150;
+	std::vector<std::pair<float, float>> fbdirectionvec;
+	fbdirectionvec.push_back(std::make_pair(0,0));
+	fbdirectionvec.push_back(std::make_pair(800, 640));
+	fbdirectionvec.push_back(std::make_pair(0, 640));
+	fbdirectionvec.push_back(std::make_pair(800, 0));
+	fbdirectionvec.push_back(std::make_pair(800, 320));
+	fbdirectionvec.push_back(std::make_pair(400, 640));
+	fbdirectionvec.push_back(std::make_pair(400, 0));
+	fbdirectionvec.push_back(std::make_pair(0, 320));
+	std::cout << "rannumx" << randomNumX << "\n";
+	for (int i = 0; i < fbdirectionvec.size(); i++) {
+		Fireball* fb = new Fireball(*refrh, getID());
+		shootProjectile(fb, sf::Vector2f(fbdirectionvec[i].first + randomNumX, fbdirectionvec[i].second + randomNumY));
+		activeAbilities.push_back(fb);
+	}
+	/*Fireball* fb2 = new Fireball(*refrh, getID());
 	shootProjectile(fb2, sf::Vector2f(800, 640));
 	activeAbilities.push_back(fb2);
 	Fireball* fb3 = new Fireball(*refrh, getID());
@@ -45,7 +60,7 @@ void Sartan::fireBarrage(std::vector<Projectile*> &activeAbilities){
 	activeAbilities.push_back(fb3);
 	Fireball* fb4 = new Fireball(*refrh, getID());
 	shootProjectile(fb4, sf::Vector2f(800, 0));
-	activeAbilities.push_back(fb4);
+	activeAbilities.push_back(fb4);*/
 }
 
 void Sartan::setDodged(bool idodged)
@@ -53,14 +68,33 @@ void Sartan::setDodged(bool idodged)
 	dodged = idodged;
 }
 
-void Sartan::act(bool dodge, std::vector<Projectile*> &activeAbilities) {
-	if (!dodge) {
-		int randomNumX = rand() % 100 - 50;
+bool Sartan::getDodged()
+{
+	return dodged;
+}
+
+void Sartan::isHit(sf::Vector2f & direction)
+{
+	Character::isHit(direction);
+	setDodged(false);
+
+}
+
+void Sartan::act(std::vector<Projectile*> &activeAbilities) {
+	if (!dodged) {
+		/*int randomNumX = rand() % 100 - 50;
 		int randomNumY = rand() % 80 - 40;
+		
 		sf::Vector2f newDirection = sf::Vector2f(400 + randomNumX, 320 + randomNumY);
-		startMovingToPoint(newDirection);
+		*/
+		sf::Vector2f sartanPos = getSprite().getPosition();
+		if (sartanPos.x > 405 || sartanPos.x < 395 || sartanPos.y < 315 || sartanPos.y > 325) {
+			startMovingToPoint(sf::Vector2f(400, 320));
+		}
+		else {
+			fireBarrage(activeAbilities);
+		}
 		defaultMovementVector = movementvector;
-		fireBarrage(activeAbilities);
 	}
 	else {
 		dodgeProjectile();
