@@ -10,6 +10,7 @@ private:
 
 	std::string icicleImageDestination = "C:/Users/frede/Desktop/Images/Icicle.png";
 	sf::RectangleShape icrs;
+	void handleProjectileLaunch(sf::Vector2f pointClicked, sf::Vector2f characterPos) override;
 
 public:
 

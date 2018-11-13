@@ -69,6 +69,9 @@
     <ClCompile Include="Icicle.cpp">
       <Filter>Source Files\Projectiles</Filter>
     </ClCompile>
+    <ClCompile Include="Meteor.cpp">
+      <Filter>Source Files\Projectiles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\Images\man.png">
@@ -110,6 +113,9 @@
       <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
     <ClInclude Include="Icicle.h">
+      <Filter>Header Files\Projectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Meteor.h">
       <Filter>Header Files\Projectiles</Filter>
     </ClInclude>
   </ItemGroup>

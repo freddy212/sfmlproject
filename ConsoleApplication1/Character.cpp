@@ -20,13 +20,14 @@ void Character::startMovingToPoint(sf::Vector2f pointClicked) {
 }
 void Character::shootProjectile(Projectile * p, sf::Vector2f pointClicked)
 {
-	p->setPosition(getSprite().getPosition());
+	p->handleProjectileLaunch(pointClicked, getSprite().getPosition());
+	/*p->setPosition(getSprite().getPosition());
 	p->changeDirectionToPoint(pointClicked);
 	p->startMoving(pointClicked);
 	//Fix later
 	for (auto i = 0; i < 2; i++) {
 		p->moveInDirection();
-	}
+	}*/
 }
 void Character::stopAtDestination() {
 	if (CustomMath::distance(sprite.getPosition(), destination) < 5.0) {

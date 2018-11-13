@@ -10,7 +10,7 @@ public:
 	void fireBarrage(std::vector<Projectile*>& activeAbilities);
 	void setDodged(bool idodged);
 	bool getDodged();
-	void isHit(sf::Vector2f &direction)override;
+	void isHit(sf::Vector2f &direction) override;
 private:
 	void manipulateSpriteImage(sf::Sprite &sprite);
 	void moveToCenter();

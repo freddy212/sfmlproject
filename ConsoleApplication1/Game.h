@@ -23,7 +23,7 @@ private:
 	float windowHeight = 640;
 	sf::FloatRect windowRect;
 	sf::Vector2f viewPos;
-	Projectile* createProjectile(bool q, bool w, Player &c);
+	Projectile* createProjectile(bool q, bool w, bool e, Player &c);
 
 public:
 	Game();

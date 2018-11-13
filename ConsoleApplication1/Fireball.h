@@ -10,6 +10,7 @@ private:
 
 	std::string fireballImageDestination = "C:/Users/frede/Desktop/Images/fireball.png";
 	sf::RectangleShape fbrs;
+	void handleProjectileLaunch(sf::Vector2f pointClicked, sf::Vector2f characterPos) override;
 
 public:
 
